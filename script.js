@@ -1,3 +1,5 @@
+'use strict';
+
 const celcius1 = document.getElementById('celcius1').value;
 const celcius2 = document.getElementById('celcius2').value;
 
