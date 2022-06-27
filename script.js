@@ -23,9 +23,13 @@ function checkTemparatures(temperature1, temperature2) {
     temperature1_value.value = parseFloat(temperature1_value.value);
     if (temperature1.value === celcius1) {
         if (temperature2.value === fahrenheit2) {
-            temperature2_value.value = ((temperature1_value.value * 9 / 5) + 32).toFixed(2) + " °F";
+            temperature2_value.value = ((temperature1_value.value * 9 / 5) + 32).toFixed(2) + "°F";
         } else if (temperature2.value === kelvin2) {
-            temperature2_value.value = (temperature1_value.value + 273.15).toFixed(2) + " K";
+            temperature2_value.value = (parseFloat(temperature1_value.value) + 273.15).toFixed(2) + " K";
+        }else if(temperature2.value === celcius2){
+            temperature2_value.value = (temperature1_value.value) + "°C";
+        }else{
+            alert("select the unit you want to convert to.")
         }
 
     } else if (temperature1.value === fahrenheit1) {
@@ -33,13 +37,21 @@ function checkTemparatures(temperature1, temperature2) {
             temperature2_value.value = ((temperature1_value.value - 32) * 5 / 9).toFixed(2) + "°C";
         } else if (temperature2.value === kelvin2) {
             temperature2_value.value = ((temperature1_value.value - 32) * 5 / 9 + 273.15).toFixed(2) + "K";
+        }else if(temperature2.value === fahrenheit2){
+            temperature2_value.value = (temperature1_value.value) + "°F";
+        }else{
+            alert("select the unit you want to convert to.")
         }
 
     } else if (temperature1.value === kelvin1) {
         if (temperature2.value === celcius2) {
             temperature2_value.value = (temperature1_value.value - 273.15).toFixed(2) + "°C";
         } else if (temperature2.value === fahrenheit2) {
-            temperature2_value.value = ((temperature1_value.value - 273.15) * 9 / 5 + 32).toFixed(2) + "K";
+            temperature2_value.value = ((temperature1_value.value - 273.15) * 9 / 5 + 32).toFixed(2) + "°F";
+        }else if(temperature2.value === kelvin2){
+            temperature2_value.value = (temperature1_value.value) + "K";
+        }else{
+            alert("select the unit you want to convert to.")
         }
     }
     // else {
@@ -55,4 +67,10 @@ convertButton.addEventListener('click', (event) => {
     checkTemparatures(temperature1, temperature2);
 });
 
-// const resetButton = document.getElementById('resetButton');
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener("click",()=>{
+    temperature1_value.value = ""
+    temperature2_value.value = ""
+    temperature1.value = ""
+    temperature2.value = ""
+})
