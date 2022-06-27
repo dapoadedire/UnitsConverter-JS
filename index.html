@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div>
+        <form action="" id="temperatureForm" name="temperatureForm">
+          <label>Unit 1</label>
+          
+            <input type="text" name="unit1" id="temperature1_value" />
+          <select  id="temperature1">
+            <option value="">Select Temperature Unit</option>
+            <option id="celcius1" value="celcius1">Celsius</option>
+            <option id="fahrenheit1" value="fahrenheit1">Fahrenheit</option>
+            <option id="kelvin1" value="kelvin1">Kelvin</option>
+            
+          </select>
+         
+          
+
+          <label for="">Unit 2</label>
+         
+            <select name="unit2" id="temperature2">
+              <option value="">Select Temperature Unit</option>
+              <option id="celcius2" value="celcius2">Celsius</option>
+              <option id="fahrenheit2" value="fahrenheit2">Fahrenheit</option>
+              <option id="kelvin2" value="kelvin2">Kelvin</option>
+            
+            </select>
+            <input type="text" id="temperature2_value" value="" readonly />
+          
+        </form>
+
+        <div class="button">
+          <button id="convertButton" type="button">Convert</button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
